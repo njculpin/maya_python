@@ -1,6 +1,8 @@
-# SAMPLE SCENE SET UP ;
+# SAMPLE SCENE SET UP. the following is a sample scene structure to use make_iteration.py. It creates 3 groups
+# of geometry and randomly offsets them. The script then places all of the groups within a super group called
+# GeometrySource. make_iteration.py requires the super group GeometrySource.
 
-GeoCategories = ['head','leg','leftArm']
+GeoCategories = ['head','left_leg','right_leg','left_arm','right_arm','leftArm']
 cmds.group( em=True, name='GeometrySource' )
 
 def make_demo_primatives():
