@@ -1,0 +1,21 @@
+
+// unlock and show hidden keyed channels on the selected object
+
+string $selectedList[] = `ls -sl`;
+
+string $currentObject;
+
+for ($currentObject in $selectedList)
+
+{
+setAttr -lock false -keyable true {$currentObject + ".tx"};
+setAttr -lock false -keyable true {$currentObject + ".ty"};
+setAttr -lock false -keyable true {$currentObject + ".tz"};
+setAttr -lock false -keyable true {$currentObject + ".rx"};
+setAttr -lock false -keyable true {$currentObject + ".ry"};
+setAttr -lock false -keyable true {$currentObject + ".rz"};
+setAttr -lock false -keyable true {$currentObject + ".sx"};
+setAttr -lock false -keyable true {$currentObject + ".sy"};
+setAttr -lock false -keyable true {$currentObject + ".sz"};
+setAttr -lock false -keyable true {$currentObject + ".v"};
+}
