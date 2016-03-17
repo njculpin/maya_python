@@ -8,7 +8,7 @@ from decimal import Decimal
 shapeList = ['RandomCube','RandomCylinder','RandomSphere','RandomSoccerBall','RandomPyramid','RandomCone','RandomTorus']
 
 # note that n*2 because of mirror function...2 == 4 objects
-n = 2
+n = 3
 
 def MakeShape(n):
 
