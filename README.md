@@ -1,2 +1,3 @@
-# maya_python
-maya python scripts
+# mel & python scripts for MAYA 2015
+
+
