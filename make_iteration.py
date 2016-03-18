@@ -42,7 +42,7 @@ def slide():
     number = 0
     while versions != 0:
         versions -= 1
-        distance += 10
+        distance += 300
         number += 1
         print 'versions remaining ' + str(versions)
         print 'distance ' + str(distance)

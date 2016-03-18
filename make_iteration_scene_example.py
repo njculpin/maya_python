@@ -2,7 +2,8 @@
 # of geometry and randomly offsets them. The script then places all of the groups within a super group called
 # GeometrySource. make_iteration.py requires the super group GeometrySource.
 
-GeoCategories = ['head','left_leg','right_leg','left_arm','right_arm','leftArm']
+GeoCategories = ['head','left_leg','right_leg','left_arm','right_arm','torso']
+shapes = ['cube','cylinder','sphere','ball','pyramid','cone','torus']
 cmds.group( em=True, name='GeometrySource' )
 
 def make_demo_primatives():
@@ -15,14 +16,54 @@ def make_demo_primatives():
         cone = cmds.polyCone(name=str(g)+'_cone',)
         torus = cmds.polyTorus(name=str(g)+'_torus',sx=4, sy=4)
         cmds.group( cube,cylinder,sphere,ball,pyramid,cone,torus, n=str(g))
+
         
-def moverandom():
+def transforms():
     for g in GeoCategories:
-        cmds.select(str(g))
-        cmds.move(random.randrange(-5,5),random.randrange(0,10),0)
-        cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0)
+        
+        if g == 'head':
+            for s in shapes:
+                cmds.select(str(g)+'_'+str(s))
+                cmds.move(0,100,0)
+                cmds.scale(20,20,20)
+                cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0)
+                
+        if g == 'left_leg':
+            for s in shapes:
+                cmds.select(str(g)+'_'+str(s))
+                cmds.move(-50,0,0)
+                cmds.scale(20,20,20)
+                cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0)
+                
+        if g == 'right_leg':
+            for s in shapes:
+                cmds.select(str(g)+'_'+str(s))
+                cmds.move(50,0,0)
+                cmds.scale(20,20,20)
+                cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0)
+                
+        if g == 'left_arm':
+            for s in shapes:
+                cmds.select(str(g)+'_'+str(s))
+                cmds.move(-50,75,0)
+                cmds.scale(20,20,20)
+                cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0)
+        
+        if g == 'right_arm':
+            for s in shapes:
+                cmds.select(str(g)+'_'+str(s))
+                cmds.move(50,75,0)
+                cmds.scale(20,20,20)
+                cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0)
+                
+        if g == 'torso':
+            for s in shapes:
+                cmds.select(str(g)+'_'+str(s))
+                cmds.move(0,75,0)
+                cmds.scale(20,20,20)
+                cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0)  
+
         cmds.parent(str(g),'GeometrySource')
-        #cmds.group(str(g),parent='GeometrySource')
         
 make_demo_primatives()
-moverandom()
+transforms()
