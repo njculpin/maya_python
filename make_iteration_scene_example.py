@@ -24,43 +24,45 @@ def transforms():
         if g == 'head':
             for s in shapes:
                 cmds.select(str(g)+'_'+str(s))
-                cmds.move(0,100,0)
-                cmds.scale(20,20,20)
+                cmds.move(0,90,0)
+                cmds.scale(10,10,10)
                 cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0)
                 
         if g == 'left_leg':
             for s in shapes:
                 cmds.select(str(g)+'_'+str(s))
-                cmds.move(-50,0,0)
-                cmds.scale(20,20,20)
+                cmds.move(-20,0,0)
+                cmds.scale(5,30,5)
                 cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0)
                 
         if g == 'right_leg':
             for s in shapes:
                 cmds.select(str(g)+'_'+str(s))
-                cmds.move(50,0,0)
-                cmds.scale(20,20,20)
+                cmds.move(20,0,0)
+                cmds.scale(5,30,5)
                 cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0)
                 
         if g == 'left_arm':
             for s in shapes:
                 cmds.select(str(g)+'_'+str(s))
-                cmds.move(-50,75,0)
-                cmds.scale(20,20,20)
+                cmds.move(-25,55,0)
+                cmds.scale(5,25,5)
+                cmds.rotate(0,0,-45)
                 cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0)
         
         if g == 'right_arm':
             for s in shapes:
                 cmds.select(str(g)+'_'+str(s))
-                cmds.move(50,75,0)
-                cmds.scale(20,20,20)
+                cmds.move(25,55,0)
+                cmds.scale(5,25,5)
+                cmds.rotate(0,0,45)
                 cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0)
                 
         if g == 'torso':
             for s in shapes:
                 cmds.select(str(g)+'_'+str(s))
-                cmds.move(0,75,0)
-                cmds.scale(20,20,20)
+                cmds.move(0,50,0)
+                cmds.scale(20,30,20)
                 cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0)  
 
         cmds.parent(str(g),'GeometrySource')
