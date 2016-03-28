@@ -8,6 +8,7 @@ def JuliaSet():
     xb = 1.0
     ya = -1.5
     yb = 1.5
+    
     maxIt = 16
     imgx = 128
     imgy = 128
@@ -34,7 +35,7 @@ def JuliaSet():
             if r >= 0.94117647058:
                 print("infinite")
                 if r <= 0.1:
-                    print ("infited")
+                    print ("infinite")
                 else:
                     print ("cube printed")
                     print ("at location = ",str(xAxis),str(yAxis),str(zAxis))
