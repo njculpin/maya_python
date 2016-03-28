@@ -1,6 +1,6 @@
 # Random Maya Julia Set
 import random
-import maya.cmds as cmds
+#import maya.cmds as cmds
 
 def JuliaSet():
     
@@ -31,14 +31,14 @@ def JuliaSet():
             zAxis = 0
             scale = float(r/255.0)
             
-            if r >= 0.94117647058 or r <= 0.07843137254:
+            if r >= 0.94117647058:
                 print("infinite")
             else:
                 print ("cube printed")
                 print ("at location = ",str(xAxis),str(yAxis),str(zAxis))
                 print ("scaled = ",str(scale))
-                cmds.polyCube()
-                cmds.move(xAxis,yAxis,zAxis)
-                cmds.scale(scale,scale,scale)               
+                #cmds.polyCube()
+                #cmds.move(xAxis,yAxis,zAxis)
+                #cmds.scale(scale,scale,scale)               
    
 JuliaSet()
