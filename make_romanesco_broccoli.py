@@ -2,23 +2,22 @@ import math
 import maya.cmds as cmds
 
 rot = 137.5
-limit = 200
+limit = 600
     
 def fib_seq():
     a, b = 0, 1
+    
     while b < limit:
         
         a, b = b, a+b
         
         cube = cmds.polyCone(h=10,r=10) # make a new brush cube
-        cmds.move(b/2,-b/2,0) #cut the sequence scale
+        cmds.move(b,-b/2,0) #cut the sequence scale
         cmds.move(cube[0]+".scalePivot",cube[0]+".rotatePivot", absolute=True)# move pivit to origin
         
         cmds.select(cmds.listRelatives(cmds.ls(geometry=True), p=True, path=True), r=True) # select all geometry
         cmds.makeIdentity(apply=True, t=1, r=1, s=1, n=0) # freeze transforms    
         cmds.rotate(0,rot,0) # rotate all       
-
-fib_seq()
 
 # define a target at origin for cube rotation
 def make_origin_target():
@@ -43,5 +42,6 @@ def point_to_target():
         cmds.select(x)
         cmds.xform(cp=True)
         cmds.aimConstraint('pSphere1',str(x))
-        
+
+fib_seq()      
 point_to_target()
