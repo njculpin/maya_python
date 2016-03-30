@@ -1,3 +1,5 @@
+import maya.cmds as cmds
+
 dist = 100
 rot = 137.5
 
@@ -8,7 +10,7 @@ def toySpiral():
     
     while z < dist:
         x += 1*2
-        y += 1*1
+        y -= 1*1
         z += 1*.5
         print (x,y,z)
         
