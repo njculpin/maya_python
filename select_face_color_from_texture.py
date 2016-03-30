@@ -7,7 +7,6 @@ more than 50% of the chosen color.
 '''
 import maya.cmds as cmds
 
-# define texture name
 textureName = ['file1']
 geometryName = ['model']
 
@@ -28,7 +27,7 @@ def main():
     cmds.select(geometryName[0])
     coords = cmds.polyEvaluate(uv=True)
 
-    finalSelectedFaces = []
+
     selectedUVs  = []
     compareUVs = []
     picked = []
@@ -123,7 +122,8 @@ def main():
                             
             # print the picked list, and select each face inside of it.
             print 'picked = ' + str(picked)
-            cmds.select(picked)
+            for p in picked:
+                cmds.polyCut(p)
                               
 # select a color via UI and change the Pick RGB values
 def pickColor():

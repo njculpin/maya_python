@@ -9,9 +9,9 @@ def JuliaSet():
     ya = -1.5
     yb = 1.5
     
-    maxIt = 16
-    imgx = 128
-    imgy = 128
+    maxIt = 32
+    imgx = 256
+    imgy = 256
     
     c = complex(random.random() * 2.0 - 1.0, random.random() - 0.5)
     
