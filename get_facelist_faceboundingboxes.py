@@ -1,4 +1,4 @@
-#select_face_color_from_texture ; clean
+# get faces & their bounding boxes
 
 import maya.cmds as cmds
 
