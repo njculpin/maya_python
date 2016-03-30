@@ -14,7 +14,7 @@ def toySpiral():
         z += 1*.5
         print (x,y,z)
         
-        cube = cmds.polyCube(h=10,w=10,d=10) # make a new brush cube
+        cube = cmds.polyCone(h=50,r=50) # make a new brush cube
         cmds.move(x,y,z) #cut the sequence scale
         cmds.move(cube[0]+".scalePivot",cube[0]+".rotatePivot", absolute=True)# move pivit to origin
     
