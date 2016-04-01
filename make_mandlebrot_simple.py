@@ -1,13 +1,5 @@
 import maya.cmds as cmds
 
-# number of copies plus the angle of rotation
-iterations = 16
-angle = 22
-
-# original geometry position
-posX = 2
-posY = 2
-posZ = 2
 
 def mandel(c):
         z=0
