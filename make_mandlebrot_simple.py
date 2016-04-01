@@ -1,6 +1,5 @@
 import maya.cmds as cmds
 
-
 def mandel(c):
         z=0
         for h in range(0,20):
@@ -12,7 +11,6 @@ def mandel(c):
         else:
                 return True
 
-
 def draw():
         for x in range(0,600):
                 real = x / 200.0 - 1.5
@@ -22,8 +20,7 @@ def draw():
                         if mandel(c):
                                 print("point",str(real),str(img))
                                 cmds.polyCube(h=1,w=1,d=1)
-                                cmds.move(real*200,img*200,0)
-                        
+                                cmds.move(real*200,img*200,0)                     
 draw()
         
         
