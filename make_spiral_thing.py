@@ -1,6 +1,6 @@
 import maya.cmds as cmds
 
-dist = 100
+dist = 150
 rot = 137.5
 
 def toySpiral():
